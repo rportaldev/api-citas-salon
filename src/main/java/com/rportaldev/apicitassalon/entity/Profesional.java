@@ -6,6 +6,8 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -38,10 +40,12 @@ public class Profesional {
 			unique = true)
 	private Usuario usuario;
 	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "dia_inicio",
 			nullable = false)
 	private DayOfWeek diaInicio;
 	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "dia_fin",
 			nullable = false)
 	private DayOfWeek diaFin;
